@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import NavBar from './NavBar'
+import NavBar from '@components/NavBar'
 
 const Layout: FC = ({ children }) => {
   return (

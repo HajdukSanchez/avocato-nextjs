@@ -6,10 +6,10 @@ const NavBar = () => {
     <div>
       <nav>
         <menu>
-          <Link href='/'>
+          <Link href="/">
             <a>Home</a>
           </Link>
-          <Link href='/about'>
+          <Link href="/about">
             <a>About</a>
           </Link>
         </menu>

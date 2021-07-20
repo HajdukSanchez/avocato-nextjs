@@ -1,7 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
 
-// Simulated API
+// Simulated API for get all the avos
 const allAvos = async (request: IncomingMessage, response: ServerResponse) => {
   const db = new DB()
   const allEntries = await db.getAll()

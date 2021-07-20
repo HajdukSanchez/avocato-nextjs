@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../components/NavBar'
 
 const API = '/api/avo'
 
@@ -19,7 +18,6 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar />
       <h1>Hello Platzi</h1>
       {productList.map((product: TProduct) => (
         <div>{product.name}</div>

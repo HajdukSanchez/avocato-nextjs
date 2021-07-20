@@ -1,7 +1,7 @@
 {
   "name": "13-next",
   "version": "1.0.0",
-  "description": "Avocato App with NextJS",
+  "description": "Avocato Platzi with Next JS",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -9,25 +9,15 @@
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HajdukSanchez/avocato-nextjs.git"
-  },
-  "keywords": [
-    "TypeScript",
-    "React",
-    "NextJS"
-  ],
-  "author": "Jozek Andrzej Hajduk Sánchez <hajduksanchez.dev@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HajdukSanchez/avocato-nextjs/issues"
-  },
-  "homepage": "https://github.com/HajdukSanchez/avocato-nextjs#readme",
   "dependencies": {
+    "@types/cors": "^2.8.6",
+    "cors": "^2.8.5",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.4.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",
@@ -45,7 +35,24 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && yarn type-check"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn type-check"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HajdukSanchez/avocato-nextjs.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "React",
+    "Next",
+    "JS"
+  ],
+  "author": "Jozek Andrzej Hajduk Sánchez <hajduksanchez.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HajdukSanchez/avocato-nextjs/issues"
+  },
+  "homepage": "https://github.com/HajdukSanchez/avocato-nextjs#readme"
 }

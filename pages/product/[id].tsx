@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from 'react'
-//* This is a hook for take the pagination or the URL
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-const API = '/api/avo'
+import Layout from '@components/Layout/Layout'
+import ProductSummary from '@components/ProductSummary/ProductSummary'
 
-const ProductItem = () => {
-  const {
-    query: { id },
-  } = useRouter()
-  const [avo, setAvo] = useState<any>({})
+const ProductPage = () => {
+  const { query } = useRouter()
+  const [product, setProduct] = useState<TProduct | null>(null)
 
   useEffect(() => {
-    window
-      .fetch(`${API}/${id}`)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-  }, [])
+    if (query.id) {
+      window
+        .fetch(`/api/avo/${query.id}`)
+        .then((response) => response.json())
+        .then((data: TProduct) => {
+          setProduct(data)
+        })
+    }
+  }, [query.id])
 
   return (
-    <div>
-      {/* Router and query come from NextJS, but Id is the name of the file */}
-      These is the page {id}
-      <div>This is the selected avocado</div>
-      <h1>{avo.name}</h1>
-    </div>
+    <Layout>
+      {product == null ? null : <ProductSummary product={product} />}
+    </Layout>
   )
 }
 
-export default ProductItem
+export default ProductPage

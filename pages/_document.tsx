@@ -3,18 +3,16 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          {/* FavIcons */}
-          {/* Style Sheets */}
-          {/* Scripts */}
-          {/* WebFonts */}
+          {/** FavIcon */}
+          {/** WebFont */}
+          {/** stylesheets */}
+          {/** scripts */}
         </Head>
-        {/* We can modify the body class */}
-        <body>
+        <body className="my-body-class">
           <Main />
           <NextScript />
-          {/* We can add other points static for the page */}
         </body>
       </Html>
     )

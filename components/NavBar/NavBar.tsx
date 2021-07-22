@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Menu, Container } from 'semantic-ui-react'
 
+import ShoppingCartIcon from '@components/NavBar/ShoppingCartIcon'
 import { Avocado } from '@components/SVGIcons'
-import ShoppingCartIcon from './ShoppingCartIcon'
 import { useCart } from '@store/Cart'
 
 const Navbar = () => {

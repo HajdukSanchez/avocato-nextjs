@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import fetch from 'isomorphic-unfetch'
 import Layout from '@components/Layout/Layout'
 import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
 
-const HomePage = () => {
-  const [productList, setProductList] = useState<TProduct[]>([])
+// This is for getting the loading in the server
+//* Generating Server Side Rendering
+export const getServerSideProps = async () => {
+  const response = await fetch('https://avocato-nextjs.vercel.app/api/avo') //! We need to use an absolute URL
+  const { data: productList }: TAPIAvoResponse = await response.json()
+  return {
+    props: {
+      productList,
+    },
+  }
+}
 
-  useEffect(() => {
-    window
-      .fetch('/api/avo')
-      .then((response) => response.json())
-      .then(({ data }: TAPIAvoResponse) => {
-        setProductList(data)
-      })
-  }, [])
-
+const HomePage = ({ productList }: { productList: TProduct[] }) => {
   return (
     <Layout>
       <KawaiiHeader />

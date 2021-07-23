@@ -17,6 +17,7 @@ export const getServerSideProps = async () => {
 } */
 
 //* Static render
+// We need to generate a Build in this case
 export const getStaticProps = async () => {
   //! We can only use in page components
   const response = await fetch('https://avocato-nextjs.vercel.app/api/avo') //! We need to use an absolute URL

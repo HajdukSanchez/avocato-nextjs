@@ -34,12 +34,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged",
-      "pre-push": "yarn type-check"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HajdukSanchez/avocato-nextjs.git"
